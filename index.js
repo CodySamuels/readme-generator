@@ -1,5 +1,6 @@
 var inquirer = require("inquirer");
 var fs = require('fs');
+var generateMarkdown = require("./utils/generateMarkdown.js");
 
 // array of questions for user
 const questions = [
@@ -13,11 +14,79 @@ const questions = [
     // * Contributing           CHECK   
     // * Tests                  HALF-CHECK
     // * Questions              HALF-CHECK
-
+//     {
+//         type: "input",
+//         name: "gitHubUserName",
+//         message: "What is your GitHub username?"
+//       },
+    
+//       {
+//         type: "input",
+//         name: "projectName",
+//         message: "What is the name of the project?"
+//       },
+    
+//       {
+//         type: "input",
+//         name: "projectDescription",
+//         message: "How would you describe this project?"
+//       },
+    
+//       {
+//         type: "confirm",
+//         name: "projectTableOfContents",
+//         message: "Would you like a table of contents?",
+//         default: false
+//       },
+    
+//       {
+//         type: "input",
+//         name: "projectInstall",
+//         message: "How do you install this project?"
+//       },
+    
+//       {
+//         type: "input",
+//         name: "projectUsage",
+//         message: "How do you use this project?"
+//       },
+    
+//       {
+//         type: "checkbox",
+//         name: "projectLicense",
+//         message: "Which license would you like to use?",
+//         choices: [
+//             "GNU AGPLv3", 
+//             "Mozilla Public License 2.0", 
+//             "MIT License", 
+//             "Unlicensed"
+//           ]
+//       },
+    
+//       {
+//         type: "confirm",
+//         name: "projectAllowContribution",
+//         message: "Would you like to allow contributions?",
+//         default: false
+//       },
+    
+//     //   PROBABLY SO WRONG
+//       {
+//         type: "input",
+//         name: "projectTests",
+//         message: "Explain your testing"
+//       },
+    
+//       {
+//         type: "confirm",
+//         name: "projectQuestions",
+//         message: "Would you like to receive questions?",
+//         default: false
+//       },
 ];
 
 // function to write README file
-function writeToFile(fileName, data) {
+function writeToFile(fileName, questions) {
 }
 
 
@@ -102,11 +171,6 @@ inquirer.prompt([
     message: "Would you like to receive questions?",
     default: false
   },
-
-
-
-
-
 
 ]).then(function(data) {
 
