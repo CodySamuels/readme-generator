@@ -1,94 +1,119 @@
 const generateMarkdown = require("./utils/generateMarkdown.js");
 const inquirer = require("inquirer");
 const fs = require('fs');
+const util = require("util");
 
-// array of questions for user
-const questions = [
-  {
-    type: "input",
-    name: "gitHubUserName",
-    message: "What is your GitHub username?"
-  },
+const writeFileAsync = util.promisify(fs.writeFile);
 
-  // {
-  //   type: "input",
-  //   name: "projectName",
-  //   message: "What is the name of the project?"
-  // },
 
-  // {
-  //   type: "input",
-  //   name: "projectDescription",
-  //   message: "How would you describe this project?"
-  // },
+function promptUser() {
+  return inquirer.prompt([
+    {
+      type: "input",
+      name: "gitHubUserName",
+      message: "What is your GitHub username?"
+    },
 
-  // {
-  //   type: "confirm",
-  //   name: "projectTableOfContents",
-  //   message: "Would you like a table of contents?",
-  //   default: false
-  // },
+    {
+      type: "input",
+      name: "projectName",
+      message: "What is the name of the project?"
+    },
 
-  // {
-  //   type: "input",
-  //   name: "projectInstall",
-  //   message: "How do you install this project?"
-  // },
+    {
+      type: "input",
+      name: "projectDescription",
+      message: "How would you describe this project?"
+    },
 
-  // {
-  //   type: "input",
-  //   name: "projectUsage",
-  //   message: "How do you use this project?"
-  // },
+    {
+      type: "confirm",
+      name: "projectTableOfContents",
+      message: "Would you like a table of contents?",
+      default: false
+    },
 
-  // {
-  //   type: "checkbox",
-  //   name: "projectLicense",
-  //   message: "Which license would you like to use?",
-  //   choices: [
-  //     "GNU AGPLv3",
-  //     "Mozilla Public License 2.0",
-  //     "MIT License",
-  //     "Unlicensed"
-  //   ]
-  // },
+    {
+      type: "input",
+      name: "projectInstall",
+      message: "How do you install this project?"
+    },
 
-  // {
-  //   type: "confirm",
-  //   name: "projectAllowContribution",
-  //   message: "Would you like to allow contributions?",
-  //   default: false
-  // },
+    {
+      type: "input",
+      name: "projectUsage",
+      message: "How do you use this project?"
+    },
 
-  // What would the test command be? "npm test"
-  // {
-  //   type: "input",
-  //   name: "projectTests",
-  //   message: "Explain your testing"
-  // },
+    {
+      type: "checkbox",
+      name: "projectLicense",
+      message: "Which license would you like to use?",
+      choices: [
+        "GNU AGPLv3",
+        "Mozilla Public License 2.0",
+        "MIT License",
+        "Unlicensed"
+      ]
+    },
 
-  // {
-  //   type: "confirm",
-  //   name: "projectQuestions",
-  //   message: "Would you like to receive questions?",
-  //   default: false
-  // },
-];
+    {
+      type: "confirm",
+      name: "projectAllowContribution",
+      message: "Would you like to allow contributions?",
+      default: false
+    },
 
-// function to write README file
-function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, (err) => {
+    // What would the test command be? "npm test"
+    {
+      type: "input",
+      name: "projectTests",
+      message: "Explain your testing"
+    },
 
-    if (err) throw err;
-    console.log("Success");
-  })
+    {
+      type: "confirm",
+      name: "projectQuestions",
+      message: "Would you like to receive questions?",
+      default: false
+    },
+  ]);
 }
+
+async function init() {
+
+  try {
+    const answers = await promptUser();
+    console.log(answers)
+    const markdown = generateMarkdown(answers);
+
+    await writeFileAsync("readME.md", markdown);
+
+    console.log("Success");
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+init();
+
+
+
+
+// // function to write README file
+// function writeToFile(fileName, data) {
+//   fs.writeFile(fileName, data, (err) => {
+
+//     if (err) throw err;
+//     console.log("Success");
+//   })
+// }
 
 // function to initialize program
-function init() {
-  inquirer.prompt(questions)
-    .then(response => (writeToFile("readME.mD", generateMarkdown(response))))
-}
+// function init() {
+//   inquirer.prompt(questions)
+//     .then(response => (writeToFile("readME.mD", generateMarkdown(response))))
+// }
 
 // function call to initialize program
-init();
+// init();
