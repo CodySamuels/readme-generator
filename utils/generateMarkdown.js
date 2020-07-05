@@ -1,65 +1,67 @@
 // function to generate markdown for README
 const generateMarkdown = function generateMarkdown(data) {
-  var tableofContents = ""
-  // LICENSE
+  let tableofContents = ""
+  let projectLicense = ""
+
   // ALLOW CONTRIBUTION
   // ACCEPT QUESTIONS
 
-  // [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  // [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-  // [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
-  // [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
-
-
-
-
-
-
+  if (data.projectLicense = "GNU AGPLv3") {
+    projectLicense = `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)`
+  } else if (data.projectLicense = "Mozzila Public License 2.0") {
+    projectLicense = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`
+  } else if (data.projectLicense = "MIT") {
+    projectLicense = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+  } else if (data.projectLicense = "Unlicencsed") {
+    projectLicense = `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`
+  }
 
   if (data.projectTableOfContents) {
-    tableofContents = `  ### TABLE OF CONTENTS
-    | Syntax | Description |
-    | ----------- | ----------- |
-    | Header | Title |
-    | Paragraph | Text |
+    tableofContents = `  
 
-     `
+  ## Table of Contents
+  
+  1. [Installation](#Installation)
+  2. [Usage](#Usage)
+  3. [Tests](#Tests)
+  4. [Contributing](#Contributing)
+  5. [Acknowledgements](#Acknowledgements)
+  6. [Questions](#Questions)
+
+  `
   }
   return `
-  # ${data.projectName}
+  # ${data.projectName} ${projectLicense} 
 
-  ### Description
-  ${data.projectDescription}
+  ## Description
+    ${data.projectDescription}
   
   ${tableofContents}
-  ### Installation
+
+  ## Installation
   
-  ${data.projectInstall}
+    ${data.projectInstall}
   
-  ### Usage
+  ## Usage
   
-  ${data.projectUsage}
+    ${data.projectUsage}
   
-  ### Tests
+  ## Tests
   
-  ${data.projectTests}
+    ${data.projectTests}
   
-  ### Questions
+  ## Contributing
   
-  ${data.projectQuestions}
+    ${data.projectAllowContribution}
   
-  ### Contributions
+  ## Acknowledgements
   
-  ${data.projectAllowContribution}
+  [${data.gitHubUserName}](https://www.github.com/${data.gitHubUserName}) the author.
+
+  ## Questions
   
-  ### License
-  
-  ${data.projectLicense}
-  
-  ### Acknowledgements
-  
-  ${data.gitHubUserName}
-   
+    ${data.projectQuestions}
+
 `
 }
 
