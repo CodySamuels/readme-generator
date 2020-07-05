@@ -1,19 +1,25 @@
 // function to generate markdown for README
 const generateMarkdown = function generateMarkdown(data) {
   let tableofContents = ""
-  let projectLicense = ""
+  let license = ""
 
   // ALLOW CONTRIBUTION
   // ACCEPT QUESTIONS
 
-  if (data.projectLicense = "GNU AGPLv3") {
-    projectLicense = `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)`
-  } else if (data.projectLicense = "Mozzila Public License 2.0") {
-    projectLicense = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`
-  } else if (data.projectLicense = "MIT") {
-    projectLicense = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
-  } else if (data.projectLicense = "Unlicencsed") {
-    projectLicense = `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`
+  if (data.projectLicense === 'GNU AGPLv3') {
+    license = `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)`
+  } 
+
+  if (data.projectLicense === 'Mozilla Public License 2.0') {
+    license = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`
+  }
+
+  if (data.projectLicense === 'MIT') {
+    license = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+  }
+
+  if (data.projectLicense === 'Unlicensed') {
+    license = `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`
   }
 
   if (data.projectTableOfContents) {
@@ -31,7 +37,7 @@ const generateMarkdown = function generateMarkdown(data) {
   `
   }
   return `
-  # ${data.projectName} ${projectLicense} 
+  # ${data.projectName} ${license} 
 
   ## Description
     ${data.projectDescription}

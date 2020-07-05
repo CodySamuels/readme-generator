@@ -46,15 +46,10 @@ function promptUser() {
     },
 
     {
-      type: "checkbox",
+      type: "list",
       name: "projectLicense",
       message: "Which license would you like to use?",
-      choices: [
-        "GNU AGPLv3",
-        "Mozilla Public License 2.0",
-        "MIT License",
-        "Unlicensed"
-      ]
+      choices: ["GNU AGPLv3", "Mozilla Public License 2.0", "MIT", "Unlicensed"]
     },
 
     {
@@ -64,11 +59,10 @@ function promptUser() {
       default: false
     },
 
-    // What would the test command be? "npm test"
     {
       type: "input",
       name: "projectTests",
-      message: "Explain your testing"
+      message: "Explain your testing."
     },
 
     {
@@ -96,24 +90,3 @@ async function init() {
 }
 
 init();
-
-
-
-
-// // function to write README file
-// function writeToFile(fileName, data) {
-//   fs.writeFile(fileName, data, (err) => {
-
-//     if (err) throw err;
-//     console.log("Success");
-//   })
-// }
-
-// function to initialize program
-// function init() {
-//   inquirer.prompt(questions)
-//     .then(response => (writeToFile("readME.mD", generateMarkdown(response))))
-// }
-
-// function call to initialize program
-// init();
