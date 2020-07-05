@@ -1,11 +1,33 @@
 // function to generate markdown for README
 const generateMarkdown = function generateMarkdown(data) {
+
+  // VARIABLES
   let tableofContents = ""
   let license = ""
+  let contributingText = ""
+  let questionText = ""
+  let questionInTableofContents = ""
 
   // ALLOW CONTRIBUTION
-  // ACCEPT QUESTIONS
+  if (data.projectAllowContribution) {
+    contributingText = "If you would like to contribute to this repository, please first discuss the changes you would like to make with a developer. You can merge a pull request after the review of at least two developers."
+  } else {
+    contributingText = "This project isn't currently accepting outside contributions."
+  }
 
+  // ACCEPT QUESTIONS AND POST EMAIL
+  if (data.projectQuestions) {
+    questionInTableofContents = `6. [Questions](#Questions)`
+    questionText = `
+  ## Questions
+
+    You can ask any questions at twowoodenspoons@gmail.com
+    `
+  } else {
+    questionText = ""
+  }
+
+  // FOR THE LICENSE BADGE
   if (data.projectLicense === 'GNU AGPLv3') {
     license = `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)`
   } else if (data.projectLicense === 'Mozilla Public License 2.0') {
@@ -16,6 +38,7 @@ const generateMarkdown = function generateMarkdown(data) {
     license = `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`
   }
 
+  // TABLE OF CONTENTS
   if (data.projectTableOfContents) {
     tableofContents = `  
 
@@ -26,10 +49,12 @@ const generateMarkdown = function generateMarkdown(data) {
   3. [Tests](#Tests)
   4. [Contributing](#Contributing)
   5. [Acknowledgements](#Acknowledgements)
-  6. [Questions](#Questions)
+  ${questionInTableofContents}
 
   `
   }
+
+  // BODY OF README
   return `
   # ${data.projectName} ${license} 
 
@@ -52,17 +77,16 @@ const generateMarkdown = function generateMarkdown(data) {
   
   ## Contributing
   
-    ${data.projectAllowContribution}
+    ${contributingText}
   
   ## Acknowledgements
   
-  [${data.gitHubUserName}](https://www.github.com/${data.gitHubUserName}) the author.
+  [${data.gitHubUserName}](https://www.github.com/${data.gitHubUserName}), the author.
 
-  ## Questions
-  
-    ${data.projectQuestions}
+  ${questionText}
 
 `
 }
 
+// EXPORT FOR USE
 module.exports = generateMarkdown;

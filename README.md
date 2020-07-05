@@ -1,32 +1,45 @@
 
-  # ;kajdsf;kajsdf [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0) 
+  # a;lksdfjas;df [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0) 
 
   ## Description
-    ads;fkjasd;fkjasdf
+    a;lsdkjfas;djfk
   
+    
+
+  ## Table of Contents
+  
+  1. [Installation](#Installation)
+  2. [Usage](#Usage)
+  3. [Tests](#Tests)
+  4. [Contributing](#Contributing)
+  5. [Acknowledgements](#Acknowledgements)
+  6. [Questions](#Questions)
+
   
 
   ## Installation
   
-    a;slkdfjajs;dkf
+    a;sldkfjas
   
   ## Usage
   
-    a;skdfj;aksdfj
+    asld;kfjadsf
   
   ## Tests
   
-    ;aksdjfa;sdf
+    y
   
   ## Contributing
   
-    true
+    If you would like to contribute to this repository, please first discuss the changes you would like to make with a developer. You can merge a pull request after the review of at least two developers.
   
   ## Acknowledgements
   
-  [whatishappening](https://www.github.com/whatishappening) the author.
+  [a;dlskfjasd;f](https://www.github.com/a;dlskfjasd;f), the author.
 
-  ## Questions
   
-    false
+  ## Questions
+
+    You can ask any questions at twowoodenspoons@gmail.com
+    
 
