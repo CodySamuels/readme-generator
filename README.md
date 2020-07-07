@@ -3,6 +3,9 @@
 
   ## Description
     This generates a basic README template that can be fleshed out to create a concise and useful README.
+
+  ## Screenshot of the Deployed Application  
+  ![Deployed Application Screenshot](./screenshots/screenshot1.png)
   
   ## Table of Contents
   
@@ -16,11 +19,13 @@
   
 
   ## Installation
+  [Intallation Video](https://drive.google.com/file/d/1dwzlDfxg3-XC1g0V89JrcU_TxbGkail3/view?usp=sharing)
   
     Download the repo off of GitHub. node install. etc.
+
   
   ## Usage
-  
+  [How to use Video](https://drive.google.com/file/d/1HZlUHFgxIwMKxz2Zh2nRL-OUsQhQO6DG/view?usp=sharing)
     You run it from the command line and follow the prompts. Use node index.js.
   
   ## Tests
@@ -34,10 +39,9 @@
   ## Acknowledgements
   
   [CodySamuels](https://www.github.com/CodySamuels), the author.
+  [README-Generator](https://www.github.com/CodySamuels/readme-generator), the project
 
   
   ## Questions
 
     You can ask any questions at twowoodenspoons@gmail.com
-    
-
