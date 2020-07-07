@@ -26,7 +26,7 @@
   
   ## Usage
   [How to use Video](https://drive.google.com/file/d/1HZlUHFgxIwMKxz2Zh2nRL-OUsQhQO6DG/view?usp=sharing)
-  
+
     You run it from the command line and follow the prompts. Use node index.js.
   
   ## Tests
@@ -40,6 +40,7 @@
   ## Acknowledgements
   
   [CodySamuels](https://www.github.com/CodySamuels), the author.
+  
   [README-Generator](https://www.github.com/CodySamuels/readme-generator), the project
 
   
