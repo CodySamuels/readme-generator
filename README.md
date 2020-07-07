@@ -1,11 +1,9 @@
 
-  # a;lksdfjas;df [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0) 
+  # README-generator [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/) 
 
   ## Description
-    a;lsdkjfas;djfk
+    This generates a basic README template that can be fleshed out to create a concise and useful README.
   
-    
-
   ## Table of Contents
   
   1. [Installation](#Installation)
@@ -19,15 +17,15 @@
 
   ## Installation
   
-    a;sldkfjas
+    Download the repo off of GitHub. node install. etc.
   
   ## Usage
   
-    asld;kfjadsf
+    You run it from the command line and follow the prompts. Use node index.js.
   
   ## Tests
   
-    y
+    npm tests
   
   ## Contributing
   
@@ -35,7 +33,7 @@
   
   ## Acknowledgements
   
-  [a;dlskfjasd;f](https://www.github.com/a;dlskfjasd;f), the author.
+  [CodySamuels](https://www.github.com/CodySamuels), the author.
 
   
   ## Questions
